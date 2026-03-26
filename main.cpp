@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <random>
+#include <iomanip>
 
 using std::cout;
 using std::vector;
@@ -33,6 +34,9 @@ void movieSimulation(vector<Movie>& movies) {
         double score = ((rand() % 100) - 50) / 10.0;
         movies[idx].addRating(score);
     }
+    for (const auto& m : movies) {
+        m.display();
+    }
 }
 
 void userSimulation(vector<User>& users){
@@ -54,11 +58,12 @@ void ratingSimulation(vector<Rating>& ratings){
     }
 }
 
-
 int main() {
     vector<Movie> movies;
     vector<User> users;
     vector<Rating> ratings;
+
+    cout << std::setprecision(3);
 
     movieSimulation(movies);
     userSimulation(users);

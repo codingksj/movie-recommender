@@ -40,9 +40,10 @@ double Movie::getAverageRating() const {
 
 void Movie::addRating(double r) {
     if (r < 0.0 || r > 5.0) {
-        cout << "평점 범위가 잘못되었습니다!" << '\n';
+        cout << r << "점은 평점 범위가 잘못되었습니다!" << '\n';
         return;
     }
+    cout << '[' << title << "] 에 평점 추가 : " << r << "점\n";
     totalRating += r;
     ratingCount++;
 }
